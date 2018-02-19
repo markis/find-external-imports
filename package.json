@@ -1,0 +1,50 @@
+{
+  "name": "find-external-imports",
+  "version": "1.0.0",
+  "description": "Find all imports for a project",
+  "main": "index.js",
+  "type": "index.d.ts",
+  "engines": {
+    "node": ">= 8"
+  },
+  "scripts": {
+    "prepublishOnly": "npm run build && npm test",
+    "lint": "tslint -c tslint.json ./src/**/*.ts",
+    "test": "npm run lint && npm run build && npm run test:unit",
+    "test:unit": "node test.js",
+    "build": "npm run build:ts && npm run build:declarations",
+    "build:ts": "tsc --declaration && rollup -c",
+    "build:declarations": "mv built/src/index.d.ts ./index.d.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/markis/find-external-imports.git"
+  },
+  "files": [
+    "index.js",
+    "index.js.map",
+    "index.d.ts",
+    "LICENSE.md",
+    "package.json",
+    "README.md"
+  ],
+  "keywords": [
+    "find-external-imports",
+    "imports"
+  ],
+  "author": "Markis Taylor <m@rkis.cc>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markis/find-external-imports/issues"
+  },
+  "homepage": "https://github.com/markis/find-external-imports#readme",
+  "dependencies": {
+    "typescript": "^2.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "9.4.6",
+    "rollup": "^0.56.2",
+    "rollup-plugin-typescript2": "^0.11.1",
+    "tslint": "5.9.1"
+  }
+}

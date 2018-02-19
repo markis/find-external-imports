@@ -1,0 +1,8 @@
+.nyc_output/
+.rpt2_cache/
+built/
+coverage/
+node_modules/
+
+/index.*
+/test.*
