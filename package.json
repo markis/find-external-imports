@@ -1,6 +1,6 @@
 {
   "name": "find-external-imports",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Find all imports for a project",
   "main": "index.js",
   "type": "index.d.ts",
